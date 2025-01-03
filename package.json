@@ -1,13 +1,14 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Media Session API for Capacitor and web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint --fix .",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "author": "NoMercy Entertainment",
   "repository": {
@@ -33,6 +34,8 @@
     "access": "public"
   },
   "files": [
+    "dist",
+    "src",
     "./*"
   ],
   "exports": {
