@@ -4,6 +4,11 @@ describe('MediaSession', () => {
 	let mediaSession: MediaSession;
 
 	beforeAll(() => {
+		// Mock global.navigator
+		// @ts-ignore
+		// noinspection JSConstantReassignment
+		global.navigator = {} as Navigator;
+		
 		// Mocking MediaMetadata
 		// @ts-ignore
 		global.MediaMetadata = class {
