@@ -1,6 +1,6 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Media Session API for Capacitor and web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,6 +10,9 @@
     "test": "jest"
   },
   "author": "NoMercy Entertainment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NoMercy-Entertainment/MediaSession.git",
   "license": "MIT",
   "dependencies": {
     "@capacitor/core": "^5.0.0",
