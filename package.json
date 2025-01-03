@@ -1,6 +1,6 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Media Session API for Capacitor and web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
