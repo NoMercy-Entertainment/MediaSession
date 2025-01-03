@@ -24,16 +24,16 @@ mediaSession.setPlaybackState('playing');
 mediaSession.setPlaybackState('paused');
 mediaSession.setPlaybackState('none');
 
+const audioElement = document.createElement('audio');
+
 // Set position state
 mediaSession.setPositionState({
-  duration: 100,
-  playbackRate: 1,
-  position: 50
+  duration: audioElement.duration,
+  playbackRate: audioElement.playbackRate,
+  position: audioElement.currentTime
 });
 
 // Set action handler
-const audioElement = document.createElement('audio');
-
 mediaSession?.setActionHandler({
     play: () => audioElement.play(),
     pause: () => audioElement.pause(),
