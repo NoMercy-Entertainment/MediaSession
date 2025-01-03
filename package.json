@@ -12,7 +12,7 @@
   "author": "NoMercy Entertainment",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NoMercy-Entertainment/MediaSession.git",
+    "url": "https://github.com/NoMercy-Entertainment/MediaSession.git"
   },
   "license": "MIT",
   "dependencies": {
