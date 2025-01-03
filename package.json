@@ -1,6 +1,6 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Media Session API for Capacitor and web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist/**/*"
-  ]
+  "exports": {
+    "./src/index": {
+      "import": "./src/index.ts",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
 }
