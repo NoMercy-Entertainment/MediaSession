@@ -1,9 +1,19 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Media Session API for Capacitor and web",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "./*"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint --fix .",
@@ -13,7 +23,7 @@
   "author": "NoMercy Entertainment",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NoMercy-Entertainment/MediaSession.git"
+    "url": "git+https://github.com/NoMercy-Entertainment/MediaSession.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -32,17 +42,5 @@
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "publishConfig": {
     "access": "public"
-  },
-  "files": [
-    "dist",
-    "src",
-    "./*"
-  ],
-  "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
   }
 }
