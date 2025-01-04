@@ -50,4 +50,10 @@ mediaSession?.setActionHandler({
 ```
 
 ## License
-MIT
+[Apache 2.0](./LICENSE)
+
+## Contact
+
+For further information or support, visit NoMercy.tv or contact our support team.
+
+Made with ❤️ by [NoMercy Entertainment](https://nomercy.tv)
