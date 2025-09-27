@@ -1,9 +1,23 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Media Session API for Capacitor and web",
   "type": "commonjs",
   "main": "./dist/index.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoMercy-Entertainment/MediaSession.git"
+  },
+  "contributors": [
+    "Stoney Eagle <stoney@nomercy.tv>"
+  ],
+  "homepage": "https://github.com/NoMercy-Entertainment/MediaSession",
+  "author": {
+    "name": "NoMercy Entertainment",
+    "email": "info@nomercy.tv",
+    "url": "https://nomercy.tv"
+  },
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
@@ -21,12 +35,6 @@
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
-  "author": "NoMercy Entertainment",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoMercy-Entertainment/MediaSession.git"
-  },
-  "license": "MIT",
   "dependencies": {
     "@capacitor/core": "^6.1.2",
     "@jofr/capacitor-media-session": "^4.0.0",
