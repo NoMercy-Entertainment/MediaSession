@@ -1,6 +1,6 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Media Session API for Capacitor and web",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -15,7 +15,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "postinstall": "patch-package --error-on-fail=false",
+    "postinstall": "patch-package --patch-dir ./patches || patch-package --patch-dir ./node_modules/@nomercy-entertainment/media-session/patches || echo 'No patches to apply'",
     "build": "tsc",
     "lint": "eslint --fix .",
     "test": "jest",
