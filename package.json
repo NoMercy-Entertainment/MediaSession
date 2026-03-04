@@ -1,7 +1,7 @@
 {
   "name": "@nomercy-entertainment/media-session",
-  "version": "0.2.5",
-  "description": "Media Session API for Capacitor and web",
+  "version": "1.0.0",
+  "description": "Media Session API for web browsers",
   "type": "commonjs",
   "main": "./dist/index.js",
   "license": "Apache-2.0",
@@ -29,16 +29,12 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "postinstall": "patch-package --patch-dir ./patches || patch-package --patch-dir ./node_modules/@nomercy-entertainment/media-session/patches || echo 'No patches to apply'",
     "build": "tsc",
     "lint": "eslint --fix .",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "@jofr/capacitor-media-session": "4.0.0",
-    "patch-package": "^8.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "29.5.14",
     "@typescript-eslint/eslint-plugin": "6.0.0",

@@ -1,4 +1,4 @@
-﻿# MediaSession for Capacitor & Web
+# MediaSession for Web
 
 [![NPM Version](https://img.shields.io/npm/v/@nomercy-entertainment/media-session?style=flat&logo=npm&logoColor=white&color=cb3837)](https://www.npmjs.com/package/@nomercy-entertainment/media-session)
 [![NPM Downloads](https://img.shields.io/npm/dm/@nomercy-entertainment/media-session?style=flat&logo=npm&logoColor=white&color=cb3837)](https://www.npmjs.com/package/@nomercy-entertainment/media-session)
@@ -13,7 +13,7 @@
 
 ## About
 
-A cross-platform Media Session API wrapper for [Capacitor](https://capacitorjs.com/) and web. Provides unified media controls, metadata, and playback state management for audio/video apps.
+A lightweight wrapper around the browser [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API). Provides unified media controls, metadata, and playback state management for audio/video apps with zero dependencies.
 
 Empowers media experiences in [NoMercyTV](https://nomercy.tv/) and other NoMercy projects.
 
@@ -21,17 +21,18 @@ Empowers media experiences in [NoMercyTV](https://nomercy.tv/) and other NoMercy
 
 ## Features
 
-- **Unified API:** Works seamlessly on web and Capacitor platforms
-- **Media Metadata:** Set title, artist, album, and artwork
+- **Zero Dependencies:** No external packages required
+- **Media Metadata:** Set title, artist, album, and artwork with automatic multi-size image generation
 - **Playback State:** Control and reflect play, pause, stop, etc.
 - **Position State:** Sync duration, position, and playback rate
 - **Action Handlers:** Respond to play, pause, seek, next/previous, and more
 - **TypeScript Support:** Full typings for safe integration
 - **Framework Agnostic:** Use with any frontend framework
+- **Graceful Fallback:** Silently no-ops when Media Session API is unavailable
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -84,7 +85,7 @@ mediaSession.setActionHandler({
 
 ---
 
-## 🎛️ Advanced Features
+## Advanced Features
 
 ### Media Session Integration
 
@@ -92,18 +93,31 @@ mediaSession.setActionHandler({
 - Customizable action handlers for all major media events
 - Automatic artwork resizing for platform compatibility
 
+### Artwork Handling
+
+When passing a string URL as artwork, the library automatically generates multiple image sizes (96x96 through 512x512) for optimal display across different platforms and devices.
+
+You can also pass a `MediaImage[]` array directly for full control over artwork variants.
+
 ---
 
-## 🔧 Browser & Platform Support
+## Browser Support
 
 | Feature           | Chrome | Firefox | Safari | Edge |
 |-------------------|:------:|:-------:|:------:|:----:|
-| Media Session API |   ✅   |   ✅    |   ✅   |  ✅  |
-| Capacitor         |   ✅   |   N/A   |  N/A   | N/A  |
+| Media Session API |   73+  |   82+   |  15+   | 79+  |
+
+When the Media Session API is not available, all methods silently no-op.
 
 ---
 
-## 🤝 Contributing
+## Migration from v0.x
+
+v1.0.0 removes the Capacitor dependency. If you were relying on the Capacitor fallback for native mobile apps, you will need to handle that separately. For browser-only usage, the API is unchanged.
+
+---
+
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](https://github.com/NoMercy-Entertainment/MediaSession/blob/master/CONTRIBUTING.md) for details.
 
@@ -111,7 +125,7 @@ We welcome contributions! Please see our [Contributing Guide](https://github.com
 
 ```sh
 # Clone the repository
-https://github.com/NoMercy-Entertainment/MediaSession.git
+git clone https://github.com/NoMercy-Entertainment/MediaSession.git
 cd MediaSession
 
 # Install dependencies
@@ -124,13 +138,13 @@ npm run test
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [Apache 2.0 License](./LICENSE) - see the LICENSE file for details.
 
 ---
 
-## 🏢 About NoMercy Entertainment
+## About NoMercy Entertainment
 
 NoMercy Entertainment builds open-source media tools that give developers full control over their audio and video.
 
@@ -143,14 +157,14 @@ NoMercy Entertainment builds open-source media tools that give developers full c
 
 ### Links
 
-- 🌐 Website: [nomercy.tv](https://nomercy.tv/)
-- 📧 Contact: [support@nomercy.tv](mailto:support@nomercy.tv)
-- 💼 GitHub: [@NoMercy-Entertainment](https://github.com/NoMercy-Entertainment)
+- Website: [nomercy.tv](https://nomercy.tv/)
+- Contact: [support@nomercy.tv](mailto:support@nomercy.tv)
+- GitHub: [@NoMercy-Entertainment](https://github.com/NoMercy-Entertainment)
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the NoMercy Engineering Team**
+**Built with care by the NoMercy Engineering Team**
 
 </div>

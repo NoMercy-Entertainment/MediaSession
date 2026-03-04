@@ -1,7 +1,5 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ActionHandler, MediaSession as CapMediaSession } from '@jofr/capacitor-media-session';
-
 interface MetadataOptions extends Omit<MediaMetadataInit, 'artwork'> {
 	artwork: MediaMetadataInit['artwork'] | string | undefined;
 }
@@ -21,114 +19,58 @@ export default class MediaSession {
 		getPosition?: () => number;
 	}
 	) {
-		if ('mediaSession' in navigator) {
+		if (!('mediaSession' in navigator)) return;
+
+		navigator.mediaSession.setActionHandler(
+			'previoustrack',
+			previous ?? (() => {
+			})
+		);
+
+		navigator.mediaSession.setActionHandler(
+			'nexttrack',
+			next ?? (() => {
+			})
+		);
+
+		if (
+			typeof seek === 'function' &&
+			typeof getPosition === 'function'
+		) {
 			navigator.mediaSession.setActionHandler(
-				'previoustrack',
-				previous ?? (() => {
-				})
+				'seekbackward',
+				(details) =>
+					seek(getPosition() - (details.seekTime ?? 30))
 			);
 
 			navigator.mediaSession.setActionHandler(
-				'nexttrack',
-				next ?? (() => {
-				})
+				'seekforward',
+				(details) =>
+					seek(getPosition() + (details.seekTime ?? 30))
 			);
 
-			if (
-				typeof seek === 'function' &&
-				typeof getPosition === 'function'
-			) {
-				navigator.mediaSession.setActionHandler(
-					'seekbackward',
-					(details) =>
-						seek(getPosition() - (details.seekTime ?? 30))
-				);
-
-				navigator.mediaSession.setActionHandler(
-					'seekforward',
-					(details) =>
-						seek(getPosition() + (details.seekTime ?? 30))
-				);
-
-				navigator.mediaSession.setActionHandler('seekto', (details) =>
-					seek(details.seekTime as number)
-				);
-			}
-
-			navigator.mediaSession.setActionHandler('play', play ?? (() => {
-			}));
-
-			navigator.mediaSession.setActionHandler('stop', stop ?? (() => {
-			}));
-
-			navigator.mediaSession.setActionHandler(
-				'pause',
-				pause ?? (() => {
-				})
+			navigator.mediaSession.setActionHandler('seekto', (details) =>
+				seek(details.seekTime as number)
 			);
-		} else {
-			CapMediaSession.setActionHandler(
-				{
-					action: 'play',
-				},
-				play as ActionHandler
-			).then();
-
-			CapMediaSession.setActionHandler(
-				{
-					action: 'pause',
-				},
-				pause as ActionHandler
-			).then();
-
-			if (
-				typeof seek === 'function' &&
-				typeof getPosition === 'function'
-			) {
-				CapMediaSession.setActionHandler({
-					action: 'seekbackward'
-				}, details => seek(getPosition() - (details.seekTime ?? 30))).then();
-
-				CapMediaSession.setActionHandler({
-					action: 'seekforward'
-				}, details => seek(getPosition() + (details.seekTime ?? 30))).then();
-
-				CapMediaSession.setActionHandler({
-					action: 'seekto'
-				}, detail => seek(detail.seekTime ?? 0)).then();
-			}
-
-			CapMediaSession.setActionHandler(
-				{
-					action: 'previoustrack',
-				},
-				previous as ActionHandler
-			).then();
-
-			CapMediaSession.setActionHandler(
-				{
-					action: 'nexttrack',
-				},
-				next as ActionHandler
-			).then();
-
-			CapMediaSession.setActionHandler(
-				{
-					action: 'stop',
-				},
-				stop as ActionHandler
-			).then();
 		}
+
+		navigator.mediaSession.setActionHandler('play', play ?? (() => {
+		}));
+
+		navigator.mediaSession.setActionHandler('stop', stop ?? (() => {
+		}));
+
+		navigator.mediaSession.setActionHandler(
+			'pause',
+			pause ?? (() => {
+			})
+		);
 	}
 
 	setPlaybackState(playbackState: MediaSessionPlaybackState) {
-		if ('mediaSession' in navigator) {
-			navigator.mediaSession.playbackState = playbackState;
-		} else {
-			CapMediaSession.setPlaybackState({
-				playbackState: playbackState,
-			}).then();
-		}
+		if (!('mediaSession' in navigator)) return;
+
+		navigator.mediaSession.playbackState = playbackState;
 	}
 
 	setMetadata({title, artist, album, artwork}: MetadataOptions) {
@@ -197,26 +139,15 @@ export default class MediaSession {
 				: [];
 		}
 
-		if ('mediaSession' in navigator) {
-			navigator.mediaSession.metadata = null;
-			navigator.mediaSession.metadata = new MediaMetadata({
-				title,
-				artist,
-				album,
-				artwork: artworkList,
-			});
-		} else {
-			try {
-				CapMediaSession.setMetadata({
-					title,
-					artist,
-					album,
-					artwork: artworkList,
-				}).then();
-			} catch (e) {
-				console.error('CapMediaSession.setMetadata', e);
-			}
-		}
+		if (!('mediaSession' in navigator)) return;
+
+		navigator.mediaSession.metadata = null;
+		navigator.mediaSession.metadata = new MediaMetadata({
+			title,
+			artist,
+			album,
+			artwork: artworkList,
+		});
 	}
 
 	setPositionState({
@@ -228,22 +159,12 @@ export default class MediaSession {
 		playbackRate: number;
 		position: number;
 	}) {
-		if ('mediaSession' in navigator) {
-			navigator.mediaSession.setPositionState({
-				duration,
-				playbackRate,
-				position,
-			});
-		} else {
-			CapMediaSession.setPositionState({
-				duration,
-				playbackRate,
-				position,
-			}).then();
-		}
-	}
-}
+		if (!('mediaSession' in navigator)) return;
 
-export {
-	ActionHandler,
+		navigator.mediaSession.setPositionState({
+			duration,
+			playbackRate,
+			position,
+		});
+	}
 }
