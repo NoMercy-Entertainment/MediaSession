@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {ActionHandler, MediaSession as CapMediaSession} from '@jofr/capacitor-media-session';
+import { ActionHandler, MediaSession as CapMediaSession } from '@jofr/capacitor-media-session';
 
 interface MetadataOptions extends Omit<MediaMetadataInit, 'artwork'> {
 	artwork: MediaMetadataInit['artwork'] | string | undefined;
@@ -8,17 +8,17 @@ interface MetadataOptions extends Omit<MediaMetadataInit, 'artwork'> {
 
 export default class MediaSession {
 	setActionHandler({
-		 play, pause, stop,
-		 previous, next, seek,
-		 getPosition,
+		play, pause, stop,
+		previous, next, seek,
+		getPosition,
 	}: {
-		 play?: MediaSessionActionHandler;
-		 pause?: MediaSessionActionHandler;
-		 stop?: MediaSessionActionHandler;
-		 previous?: MediaSessionActionHandler;
-		 next?: MediaSessionActionHandler;
-		 seek?: (number: number) => void;
-		 getPosition?: () => number;
+		play?: MediaSessionActionHandler;
+		pause?: MediaSessionActionHandler;
+		stop?: MediaSessionActionHandler;
+		previous?: MediaSessionActionHandler;
+		next?: MediaSessionActionHandler;
+		seek?: (number: number) => void;
+		getPosition?: () => number;
 	}
 	) {
 		if ('mediaSession' in navigator) {
@@ -220,9 +220,9 @@ export default class MediaSession {
 	}
 
 	setPositionState({
-		 duration,
-		 playbackRate,
-		 position
+		duration,
+		playbackRate,
+		position
 	}: {
 		duration: number;
 		playbackRate: number;
