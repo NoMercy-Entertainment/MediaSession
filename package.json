@@ -2,8 +2,9 @@
   "name": "@nomercy-entertainment/media-session",
   "version": "1.0.0",
   "description": "Media Session API for web browsers",
-  "type": "commonjs",
+  "type": "module",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -25,7 +26,16 @@
     "./*"
   ],
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
