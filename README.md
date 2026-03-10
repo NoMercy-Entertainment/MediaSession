@@ -2,11 +2,11 @@
 
 [![NPM Version](https://img.shields.io/npm/v/@nomercy-entertainment/media-session?style=flat&logo=npm&logoColor=white&color=cb3837)](https://www.npmjs.com/package/@nomercy-entertainment/media-session)
 [![NPM Downloads](https://img.shields.io/npm/dm/@nomercy-entertainment/media-session?style=flat&logo=npm&logoColor=white&color=cb3837)](https://www.npmjs.com/package/@nomercy-entertainment/media-session)
-[![License](https://img.shields.io/github/license/NoMercy-Entertainment/MediaSession?style=flat&color=green)](./LICENSE)
+[![License](https://img.shields.io/github/license/NoMercy-Entertainment/nomercy-media-session?style=flat&color=green)](./LICENSE)
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-orange?style=flat)](https://github.com/NoMercy-Entertainment/MediaSession)
-[![GitHub Stars](https://img.shields.io/github/stars/NoMercy-Entertainment/MediaSession?style=flat&logo=github&logoColor=white&color=yellow)](https://github.com/NoMercy-Entertainment/MediaSession/stargazers)
+[![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-orange?style=flat)](https://github.com/NoMercy-Entertainment/nomercy-media-session)
+[![GitHub Stars](https://img.shields.io/github/stars/NoMercy-Entertainment/nomercy-media-session?style=flat&logo=github&logoColor=white&color=yellow)](https://github.com/NoMercy-Entertainment/nomercy-media-session/stargazers)
 
 
 ---
@@ -119,14 +119,14 @@ v1.0.0 removes the Capacitor dependency. If you were relying on the Capacitor fa
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](https://github.com/NoMercy-Entertainment/MediaSession/blob/master/CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guide](https://github.com/NoMercy-Entertainment/nomercy-media-session/blob/master/CONTRIBUTING.md) for details.
 
 ### Development Setup
 
 ```sh
 # Clone the repository
-git clone https://github.com/NoMercy-Entertainment/MediaSession.git
-cd MediaSession
+git clone https://github.com/NoMercy-Entertainment/nomercy-media-session.git
+cd nomercy-media-session
 
 # Install dependencies
 npm install
@@ -150,10 +150,10 @@ NoMercy Entertainment builds open-source media tools that give developers full c
 
 ### Our Ecosystem
 
-- [NoMercy MediaServer](https://github.com/NoMercy-Entertainment/NoMercyMediaServer)
-- [NoMercy VideoPlayer](https://github.com/NoMercy-Entertainment/NoMercyVideoPlayer)
-- [NoMercy MusicPlayer](https://github.com/NoMercy-Entertainment/NoMercyMusicPlayer)
-- [NoMercy FFmpeg](https://github.com/NoMercy-Entertainment/NoMercyFFMpeg)
+- [NoMercy MediaServer](https://github.com/NoMercy-Entertainment/nomercy-media-server)
+- [NoMercy VideoPlayer](https://github.com/NoMercy-Entertainment/nomercy-video-player)
+- [NoMercy MusicPlayer](https://github.com/NoMercy-Entertainment/nomercy-music-player)
+- [NoMercy FFmpeg](https://github.com/NoMercy-Entertainment/nomercy-ffmpeg)
 
 ### Links
 
